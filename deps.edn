@@ -22,6 +22,10 @@
            ;; kit Libs
            io.github.kit-clj/kit-core {:mvn/version "1.0.6"}
            io.github.kit-clj/kit-undertow {:mvn/version "1.0.6"}
+           io.github.kit-clj/kit-mysql {:mvn/version "1.0.5"}
+           io.github.kit-clj/kit-postgres {:mvn/version "1.0.4"}
+           io.github.kit-clj/kit-sql-conman {:mvn/version "1.0.9"}
+           io.github.kit-clj/kit-sql-migratus {:mvn/version "1.0.4"}
            }
  :aliases {:build {:deps {io.github.clojure/tools.build {:git/sha "24f2894"
                                                          :git/tag "v0.9.5" :git/url "https://github.com/clojure/tools.build.git"}}

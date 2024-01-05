@@ -40,12 +40,32 @@
 
  :reitit.routes/api
  {:base-path "/api"
-  :env       #ig/ref :system/env 
+  :env       #ig/ref :system/env
+  :query-fn #ig/ref :db.sql/query-fn
   }
 
  :router/routes
  {:routes #ig/refset :reitit/routes}
 
  :router/core
- {:routes #ig/ref :router/routes}   
+ {:routes #ig/ref :router/routes}
+
+ :db.sql/connection
+ #profile {:dev  {:jdbc-url "jdbc:postgresql://localhost/collection?user=collection&password=collection"}
+           :test {}
+           :prod {:jdbc-url   #env JDBC_URL
+                  :init-size  1
+                  :min-idle   1
+                  :max-idle   8
+                  :max-active 32}}
+
+ :db.sql/query-fn
+ {:conn     #ig/ref :db.sql/connection
+  :options  {}
+  :filename "queries.sql"}
+
+ :db.sql/migrations
+ {:store            :database
+  :db               {:datasource #ig/ref :db.sql/connection}
+  :migrate-on-init? true}
 }
