@@ -1,0 +1,8 @@
+{:full-name "zuzhi/collection"
+ :ns-name   "zuzhi.collection"
+ :sanitized "zuzhi/collection"
+ :name      "collection"
+ :modules   {:root         "modules"
+             :repositories [{:url  "https://github.com/kit-clj/modules.git"
+                             :tag  "master"
+                             :name "kit-modules"}]}}
