@@ -1,7 +1,11 @@
 (ns zuzhi.collection.env
   (:require
     [clojure.tools.logging :as log]
-    [zuzhi.collection.dev-middleware :refer [wrap-dev]]))
+    [zuzhi.collection.dev-middleware :refer [wrap-dev]]
+
+    ;; test containers
+    [zuzhi.collection.db.tc-postgres]
+  ))
 
 (def defaults
   {:init       (fn []

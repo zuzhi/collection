@@ -1,0 +1,7 @@
+{:testcontainers/postgres {:db        "collection"
+                           :username  "collection"
+                           :password  "collection"
+                           :data-path #profile {:dev  "devdata/postgres"
+                                                :test nil}}
+
+ :db.sql/dev-postgres     #ig/ref :testcontainers/postgres}

@@ -22,7 +22,6 @@
            ;; kit Libs
            io.github.kit-clj/kit-core {:mvn/version "1.0.6"}
            io.github.kit-clj/kit-undertow {:mvn/version "1.0.6"}
-           io.github.kit-clj/kit-mysql {:mvn/version "1.0.5"}
            io.github.kit-clj/kit-postgres {:mvn/version "1.0.4"}
            io.github.kit-clj/kit-sql-conman {:mvn/version "1.0.9"}
            io.github.kit-clj/kit-sql-migratus {:mvn/version "1.0.4"}
@@ -32,7 +31,8 @@
                    :ns-default build}
 
 
-           :dev  {:extra-deps  {com.lambdaisland/classpath      {:mvn/version "0.4.44"}
+           :dev  {:extra-deps  {clj-test-containers/clj-test-containers {:mvn/version "0.5.0"}
+                                com.lambdaisland/classpath      {:mvn/version "0.4.44"}
                                 criterium/criterium             {:mvn/version "0.4.6"}
                                 expound/expound                 {:mvn/version "0.9.0"}
                                 integrant/repl                  {:mvn/version "0.3.3"}

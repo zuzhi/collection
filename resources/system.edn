@@ -51,8 +51,8 @@
  {:routes #ig/ref :router/routes}
 
  :db.sql/connection
- #profile {:dev  {:jdbc-url "jdbc:postgresql://localhost/collection?user=collection&password=collection"}
-           :test {}
+ #profile {:dev  {:jdbc-url #ig/ref :db.sql/dev-postgres}
+           :test {:jdbc-url #ig/ref :db.sql/dev-postgres}
            :prod {:jdbc-url   #env JDBC_URL
                   :init-size  1
                   :min-idle   1

@@ -9,7 +9,6 @@
     [kit.edge.db.sql.conman]
     [kit.edge.db.sql.migratus]
     [kit.edge.db.postgres]
-    [kit.edge.db.mysql]
     [kit.edge.server.undertow]
     [zuzhi.collection.web.handler]
 

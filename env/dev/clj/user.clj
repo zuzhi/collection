@@ -11,7 +11,8 @@
     [integrant.repl.state :as state]
     [kit.api :as kit]
     [lambdaisland.classpath.watch-deps :as watch-deps]      ;; hot loading for deps
-    [zuzhi.collection.core :refer [start-app]]))
+    [zuzhi.collection.core :refer [start-app]]
+    [zuzhi.collection.seed-data :as seed]))
 
 ;; uncomment to enable hot loading for deps
 (watch-deps/start! {:aliases [:dev :test]})
@@ -56,4 +57,5 @@
 
 (comment
   (go)
+  (seed/seed-musicbrainz! (:db.sql/dev-postgres state/system))
   (reset))
